@@ -11,8 +11,8 @@ namespace Data_structure
             list.Add(30);
             list.Add(70);
             list.Display();
-            list.RemoveFirstNode();
-            Console.WriteLine("Linked list after first element deleted");
+            list.RemoveLastNode();
+            Console.WriteLine("Linked list after last element deleted");
             list.Display();
         }
     }
