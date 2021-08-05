@@ -8,9 +8,11 @@ namespace Data_structure
         {
             LinkedList list = new LinkedList();
             list.Add(56);
+            list.Add(30);
             list.Add(70);
-            int a = list.Search(56);
-            list.InsertAtParticularPosition(a+1, 30);
+            list.Display();
+            list.RemoveFirstNode();
+            Console.WriteLine("Linked list after first element deleted");
             list.Display();
         }
     }

@@ -39,48 +39,14 @@ namespace Data_structure
                 temp = temp.next;
             }
         }
-        public int Search(int value)
+        public Node RemoveFirstNode()
         {
-            Node node = this.head;
-            int count = 0;
-            while (node != null)
-            {
-                if (node.data == value)
-                {
-                    return count;
-                }
-                node = node.next;
-                count++;
-
-            }
-            return count;
-        }
-        public Node InsertAtParticularPosition(int position, int data)
-        {
-            Node newestNode = new Node(data);
             if (this.head == null)
             {
-                return newestNode;
+                return null;
             }
-            if (position == 0)
-            {
-                newestNode.next = this.head;
-                this.head = newestNode;
-                return this.head;
-            }
-            Node prev = null;
-            Node current = this.head;
-            int count = 0;
-            while (current != null && count < position)
-            {
-                prev = current;
-                current = newestNode;
-                count++;
-            }
-            newestNode.next = prev.next;
-            prev.next = newestNode;
+            this.head = this.head.next;
             return this.head;
-
         }
     }
 }
