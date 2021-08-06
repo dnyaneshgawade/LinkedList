@@ -17,5 +17,19 @@ namespace Data_structureTest
             int result = list.Search(30);
             Assert.AreEqual(1, result);
         }
+        [TestMethod]
+        public void TestCaseForInsertAtPerticularPosition()
+        {
+
+            list.Add(50);
+            list.Add(30);
+            list.Add(70);
+            int result = list.Search(30);
+            Assert.AreEqual(1, result);
+            list.InsertAtParticularPosition(result+1, 40);
+            int addResult = list.Search(40);
+            Assert.AreEqual(3, addResult);
+
+        }
     }
 }
