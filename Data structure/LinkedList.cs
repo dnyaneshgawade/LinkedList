@@ -54,7 +54,7 @@ namespace Data_structure
             }
 
         }
-        public bool Search(int value)
+        public int Search(int value)
         {
             Node node = this.head;
             int count = 0;
@@ -62,13 +62,13 @@ namespace Data_structure
             {
                 if (node.data == value)
                 {
-                    return true;
+                    return count;
                 }
                 node = node.next;
                 count++;
 
             }
-            return false;
+            return count;
         }
         public Node InsertAtParticularPosition(int position, int data)
         {

@@ -9,12 +9,13 @@ namespace Data_structureTest
     {
         LinkedList list = new LinkedList();
         [TestMethod]
-        public void GivenIntegerPosition_WhenFind_ShouldReturnTrue()
+        public void TestCaseForSearch()
         {
+            
             list.Add(50);
             list.Add(30);
-            bool result = list.Search(30);
-            Assert.AreEqual(true, result);
+            int result = list.Search(30);
+            Assert.AreEqual(1, result);
         }
     }
 }
