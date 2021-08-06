@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Data_structure
 {
-    class LinkedList
+    public class LinkedList
     {
         public Node head;
         public void Add(int data)
@@ -38,6 +38,73 @@ namespace Data_structure
                 Console.WriteLine(temp.data + "");
                 temp = temp.next;
             }
+        }
+        public void AddInReverseOrder(int data)
+        {
+            Node newNode = new Node(data);
+            if (this.head == null)
+            {
+                this.head = newNode;
+            }
+            else
+            {
+                Node temp = this.head;
+                head = newNode;
+                head.next = temp;
+            }
+
+        }
+        public bool Search(int value)
+        {
+            Node node = this.head;
+            int count = 0;
+            while (node != null)
+            {
+                if (node.data == value)
+                {
+                    return true;
+                }
+                node = node.next;
+                count++;
+
+            }
+            return false;
+        }
+        public Node InsertAtParticularPosition(int position, int data)
+        {
+            Node newestNode = new Node(data);
+            if (this.head == null)
+            {
+                return newestNode;
+            }
+            if (position == 0)
+            {
+                newestNode.next = this.head;
+                this.head = newestNode;
+                return this.head;
+            }
+            Node prev = null;
+            Node current = this.head;
+            int count = 0;
+            while (current != null && count < position)
+            {
+                prev = current;
+                current = newestNode;
+                count++;
+            }
+            newestNode.next = prev.next;
+            prev.next = newestNode;
+            return this.head;
+
+        }
+        public Node RemoveFirstNode()
+        {
+            if (this.head == null)
+            {
+                return null;
+            }
+            this.head = this.head.next;
+            return this.head;
         }
         public Node RemoveLastNode()
         {
